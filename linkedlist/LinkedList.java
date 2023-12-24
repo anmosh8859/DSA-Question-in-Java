@@ -60,26 +60,31 @@ public class LinkedList {
     public Node mergeTwoSortedLinkedList(Node temp1,Node temp2){
         LinkedList ans = new LinkedList();
         Node ansTemp = ans.head;
+
+
         while (temp1!=null && temp2!=null){
+
             if(temp1.data<=temp2.data){
-                if(ansTemp==null){
-                    ans.head = ansTemp = temp1;
-                }
-                else {
-                    ansTemp.next = temp1;
-                    ansTemp = ansTemp.next;
-                }
+
+                if(ansTemp == null) ans.head = ansTemp = temp1;
+
+                else ansTemp = ansTemp.next = temp1;
+
                 temp1 = temp1.next;
+
             } else{
-                if(ansTemp==null) ansTemp = temp2;
-                else {
-                    ansTemp.next = temp2;
-                    ansTemp = ansTemp.next;
-                }
+
+                if(ansTemp==null) ans.head = ansTemp = temp2;
+
+                else ansTemp = ansTemp.next = temp2;
+
                 temp2 = temp2.next;
+
             }
+
         }
-        if(ansTemp != null) ansTemp.next = temp1 != null ? temp1 : temp2;
+        if(ansTemp==null) ansTemp = temp1 != null ? temp1 : temp2;
+        else ansTemp.next = temp1 != null ? temp1 : temp2;
         return ans.head;
     }
     public Node getMidNode(Node head){
@@ -90,30 +95,19 @@ public class LinkedList {
             slow = slow==null ? head : slow.next;
             fast = fast.next.next;
         }
-//        System.out.println(slow.data);
         Node ans = slow.next;
         slow.next = null;
-        System.out.println("END");
-
-        display(head);
-
         return ans;
     }
 
     public void mergeSort(){
-        mergeSort(head);
+        head = mergeSort(head);
     }
     private Node mergeSort(Node head){
         if(head == null || head.next == null) return head;
         Node mid = getMidNode(head);
-//        System.out.println(mid.data);
-        display(head);
-        display(mid);
-
         Node left = mergeSort(head);
-
         Node right = mergeSort(mid);
-
         return mergeTwoSortedLinkedList(left,right);
     }
 }

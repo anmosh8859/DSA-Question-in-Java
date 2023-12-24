@@ -26,9 +26,9 @@ public class Main {
         LinkedList l2 = new LinkedList();
         l2.insertLast(9);
         l2.insertLast(1);
-//        l2.insertLast(5);
-//        l2.insertLast(4);
-//        l2.insertLast(1);
+        l2.insertLast(5);
+        l2.insertLast(4);
+        l2.insertLast(1);
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
 //        l2.display();
