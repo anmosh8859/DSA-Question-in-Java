@@ -18,17 +18,24 @@ public class Main {
 //        QuickSort.quickSort(arr);
 //        System.out.println(Arrays.toString(arr));
 
-        LinkedList l1 = new LinkedList();
-        l1.insertLast(1);
-        l1.insertLast(2);
-        l1.insertLast(3);
-
+//        LinkedList l1 = new LinkedList();
+//        l1.insertLast(1);
+//        l1.insertLast(2);
+//        l1.insertLast(3);
+//
         LinkedList l2 = new LinkedList();
-        l2.insertLast(1);
-        l2.insertLast(2);
         l2.insertLast(9);
-        l2.insertLast(14);
-        LinkedList ans = LinkedList.mergeSorted(l1,l2);
-        ans.display();
+        l2.insertLast(1);
+//        l2.insertLast(5);
+//        l2.insertLast(4);
+//        l2.insertLast(1);
+
+//        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
+//        l2.display();
+        l2.mergeSort();
+        l2.display();
+//        ans.display();
+//        HappyNumber hn = new HappyNumber();
+//        hn.happyNumber(10);
     }
 }

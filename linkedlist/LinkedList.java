@@ -17,6 +17,13 @@ public class LinkedList {
         }
     }
     private Node head;
+
+    public LinkedList() {}
+
+    public LinkedList(Node head) {
+        this.head = head;
+    }
+
     public void insertLast(Integer data){
         if(head == null){
             head = new Node(data);
@@ -35,35 +42,78 @@ public class LinkedList {
         head = node;
     }
     public void display(){
-        Node node = head;
+        display(head);
+    }
+
+    private void display(Node node){
         while(node != null){
             System.out.print(node.data + " -> ");
             node = node.next;
         }
         System.out.println("END");
     }
-
-    public static LinkedList mergeSorted(LinkedList l1, LinkedList l2){
+    public LinkedList mergeTwoSortedLinkedList(LinkedList l1, LinkedList l2){
         Node temp1 = l1.head;
         Node temp2 = l2.head;
+        return new LinkedList(mergeTwoSortedLinkedList(temp1,temp2));
+    }
+    public Node mergeTwoSortedLinkedList(Node temp1,Node temp2){
         LinkedList ans = new LinkedList();
+        Node ansTemp = ans.head;
         while (temp1!=null && temp2!=null){
             if(temp1.data<=temp2.data){
-                ans.insertLast(temp1.data);
+                if(ansTemp==null){
+                    ans.head = ansTemp = temp1;
+                }
+                else {
+                    ansTemp.next = temp1;
+                    ansTemp = ansTemp.next;
+                }
                 temp1 = temp1.next;
             } else{
-                ans.insertLast(temp2.data);
+                if(ansTemp==null) ansTemp = temp2;
+                else {
+                    ansTemp.next = temp2;
+                    ansTemp = ansTemp.next;
+                }
                 temp2 = temp2.next;
             }
         }
-        while(temp1 != null){
-            ans.insertLast(temp1.data);
-            temp1 = temp1.next;
+        if(ansTemp != null) ansTemp.next = temp1 != null ? temp1 : temp2;
+        return ans.head;
+    }
+    public Node getMidNode(Node head){
+        Node slow;
+        slow = null;
+        Node fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow==null ? head : slow.next;
+            fast = fast.next.next;
         }
-        while(temp2 != null){
-            ans.insertLast(temp2.data);
-            temp2 = temp2.next;
-        }
+//        System.out.println(slow.data);
+        Node ans = slow.next;
+        slow.next = null;
+        System.out.println("END");
+
+        display(head);
+
         return ans;
+    }
+
+    public void mergeSort(){
+        mergeSort(head);
+    }
+    private Node mergeSort(Node head){
+        if(head == null || head.next == null) return head;
+        Node mid = getMidNode(head);
+//        System.out.println(mid.data);
+        display(head);
+        display(mid);
+
+        Node left = mergeSort(head);
+
+        Node right = mergeSort(mid);
+
+        return mergeTwoSortedLinkedList(left,right);
     }
 }
