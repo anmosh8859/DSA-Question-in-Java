@@ -172,4 +172,38 @@ public class LinkedList {
             bubbleSort(row - 1,1);
         }
     }
+    public void recReverseLL(){
+//        if(head == null || head.next == null) return;
+//        recReverseLL(head,getNodeAt(getSize()));
+        head = reverse(head);
+    }
+
+//    private void recReverseLL(Node head, Node tail) {
+//        if(head == tail){
+//            head = tail;
+//            return;
+//        }
+//
+//        recReverseLL(head.next, tail);
+//    }
+        private Node reverse(Node head) {
+            if(head == null) {
+                return head;
+            }
+
+            // last node or only one node
+            if(head.next == null) {
+                return head;
+            }
+
+            Node newHeadNode = reverse(head.next);
+
+            // change references for middle chain
+            head.next.next = head;
+            head.next = null;
+            display(newHeadNode);
+
+            // send back new head node in every recursion
+            return newHeadNode;
+        }
 }

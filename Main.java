@@ -27,8 +27,8 @@ public class Main {
         l2.insertLast(9);
         l2.insertLast(1);
         l2.insertLast(5);
-        l2.insertLast(4);
-        l2.insertLast(1);
+//        l2.insertLast(4);
+//        l2.insertLast(1);
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
 //        l2.display();
@@ -36,7 +36,8 @@ public class Main {
 //        System.out.println(l2.getSize());
         l2.display();
 //        l2.swapNode(4,5);
-        l2.bubbleSort();
+//        l2.bubbleSort();
+        l2.recReverseLL();
         l2.display();
 //        ans.display();
 //        HappyNumber hn = new HappyNumber();
