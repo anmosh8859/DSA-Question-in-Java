@@ -32,7 +32,11 @@ public class Main {
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
 //        l2.display();
-        l2.mergeSort();
+//        l2.mergeSort();
+//        System.out.println(l2.getSize());
+        l2.display();
+//        l2.swapNode(4,5);
+        l2.bubbleSort();
         l2.display();
 //        ans.display();
 //        HappyNumber hn = new HappyNumber();

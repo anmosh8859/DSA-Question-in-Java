@@ -110,4 +110,66 @@ public class LinkedList {
         Node right = mergeSort(mid);
         return mergeTwoSortedLinkedList(left,right);
     }
+
+    public void swapNode(int first, int second){
+        swapNode(getNodeAt(first - 1), getNodeAt(first), getNodeAt(first + 1),getNodeAt(second - 1),getNodeAt(second),getNodeAt(second + 1));
+    }
+
+    private void swapNode(Node prevFirst, Node first, Node firstNext, Node prevSec, Node second, Node secondNext){
+        if(prevFirst!=null) prevFirst.next = second;
+        else head = second;
+
+        first.next = secondNext;
+
+        if(prevSec!=first) prevSec.next = first;
+
+        if(firstNext!=second) second.next = firstNext;
+        else second.next = first;
+
+    }
+
+    public int getSize(){
+        return getSize(head);
+    }
+    private int getSize(Node head){
+        int count = 0;
+        while(head!=null){
+            head = head.next;
+            count++;
+        }
+        return count;
+    }
+
+    public int dataAt(int num){
+        return getNodeAt(num).data;
+    }
+
+    private Node getNodeAt(int num){
+        int size = getSize();
+        Node node = head;
+        if(num>size || num < 1) return null;
+        for (int i = 1; i < num; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public void bubbleSort(){
+        bubbleSort(getSize(),1);
+    }
+
+    public void bubbleSort(int row, int col){
+        if(row == 0) return;
+        if(col < row){
+            Node first = getNodeAt(col);
+            Node second = getNodeAt(col + 1);
+            if(first.data> second.data){
+                swapNode(col, col+1);
+                display();
+            }
+            bubbleSort(row,col+1);
+        } else{
+            bubbleSort(row - 1,1);
+        }
+    }
 }
