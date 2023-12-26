@@ -17,7 +17,7 @@ public class Collection{
         ts.add("Coding");
         System.out.println(ts);
 
-        Map<Integer, String> map = new TreeMap<>();
+        TreeMap<Integer, String> map = new TreeMap<>();
 
         map.put(1,"Ricky");
         map.put(6,"Ankit");
@@ -25,5 +25,11 @@ public class Collection{
         map.put(2,"Ran Vijay");
 
         System.out.println(map);
+
+        map.put(3,"Saurabh");
+
+        System.out.println(map);
+
+        System.out.println(map.ceilingKey(5));
     }
 }
