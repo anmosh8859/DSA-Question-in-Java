@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Collection{
     public static void main(String[] args) {
-        List<Integer> intList = new ArrayList<>();
-        int [] arr = {1,2,3,4,5,6,7};
-        intList.addAll(Arrays.asList(1,2,3,4,5,6,7));
+        List<Integer> intList = Arrays.asList(1,2,3,4,5,6,7);
+        System.out.println(intList);
+        intList.remove(3);
         System.out.println(intList.contains(5));
         System.out.println(intList.get(0));
-        System.out.println();
+        System.out.println(intList);
 
         Set<String> ts = new TreeSet<>();
         ts.add("Anand");
@@ -27,6 +27,12 @@ public class Collection{
         System.out.println(map);
 
         map.put(3,"Saurabh");
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(25);
+        pq.offer(14);
+
+        System.out.println(pq);
 
         System.out.println(map);
 
