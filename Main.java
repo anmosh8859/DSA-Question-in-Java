@@ -1,7 +1,7 @@
+import collection.GenericClass;
 import linkedlist.LinkedList;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -42,5 +42,9 @@ public class Main {
 //        ans.display();
 //        HappyNumber hn = new HappyNumber();
 //        hn.happyNumber(10);
+
+//        GenericClass<Integer> gen = new GenericClass<>();
+//        gen.add(5);
+//        System.out.println(gen);
     }
 }

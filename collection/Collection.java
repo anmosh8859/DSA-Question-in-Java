@@ -6,7 +6,7 @@ public class Collection{
     public static void main(String[] args) {
         List<Integer> intList = Arrays.asList(1,2,3,4,5,6,7);
         System.out.println(intList);
-        intList.remove(3);
+//        intList.remove(3); reports error as asList methods the unmodifiable ArrayList
         System.out.println(intList.contains(5));
         System.out.println(intList.get(0));
         System.out.println(intList);
@@ -37,5 +37,10 @@ public class Collection{
         System.out.println(map);
 
         System.out.println(map.ceilingKey(5));
+
+        List list = new ArrayList();
+        list.add(1);
+        list.add("Anand");
+        System.out.println(list);
     }
 }
