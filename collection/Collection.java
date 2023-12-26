@@ -16,5 +16,14 @@ public class Collection{
         ts.add("Hello World");
         ts.add("Coding");
         System.out.println(ts);
+
+        Map<Integer, String> map = new TreeMap<>();
+
+        map.put(1,"Ricky");
+        map.put(6,"Ankit");
+        map.put(3,"Naveen");
+        map.put(2,"Ran Vijay");
+
+        System.out.println(map);
     }
 }
