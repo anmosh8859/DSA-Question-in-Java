@@ -28,7 +28,7 @@ public class Main {
         l2.insertLast(1);
         l2.insertLast(5);
         l2.insertLast(4);
-        l2.insertLast(1);
+        l2.insertLast(6);
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
         l2.display();
@@ -41,7 +41,8 @@ public class Main {
 //        l2.display();
 //        ans.display();
 
-        l2.reverseItter();
+//        l2.reverseItter();
+        l2.reverseBetween(0,5);
         l2.display();
 //        HappyNumber hn = new HappyNumber();
 //        hn.happyNumber(10);

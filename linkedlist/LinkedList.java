@@ -226,4 +226,34 @@ public class LinkedList {
             head = curr;
             return head;
         }
+
+        public void reverseBetween(int left, int right){
+            reverseBetween(head, left, right);
+        }
+
+        private void reverseBetween(Node head, int left, int right){
+            if(head == null || head.next == null || left>=right) return;
+            int size = getSize();
+            if(left<1) left = 1;
+            if(right>size) right = size;
+
+            Node prevLeft = getNodeAt(left-1);
+            Node nextRight = getNodeAt(right+1);
+
+            Node prev = prevLeft;
+            Node curr = getNodeAt(left);
+            Node next = curr.next;
+            Node headTemp = curr;
+
+            while(next!=nextRight){
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+                next = next.next;
+            }
+            curr.next = prev;
+            if(prevLeft!=null) prevLeft.next = curr;
+            else this.head = curr;
+            headTemp.next = nextRight;
+        }
 }
