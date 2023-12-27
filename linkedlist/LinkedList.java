@@ -175,7 +175,7 @@ public class LinkedList {
     public void recReverseLL(){
 //        if(head == null || head.next == null) return;
 //        recReverseLL(head,getNodeAt(getSize()));
-        head = reverse(head);
+        head = reverseRec(head);
     }
 
 //    private void recReverseLL(Node head, Node tail) {
@@ -186,7 +186,7 @@ public class LinkedList {
 //
 //        recReverseLL(head.next, tail);
 //    }
-        private Node reverse(Node head) {
+        private Node reverseRec(Node head) {
             if(head == null) {
                 return head;
             }
@@ -196,7 +196,7 @@ public class LinkedList {
                 return head;
             }
 
-            Node newHeadNode = reverse(head.next);
+            Node newHeadNode = reverseRec(head.next);
 
             // change references for middle chain
             head.next.next = head;
@@ -205,5 +205,25 @@ public class LinkedList {
 
             // send back new head node in every recursion
             return newHeadNode;
+        }
+
+        public void reverseItter(){
+            head = reverseItter(head);
+        }
+
+        private Node reverseItter(Node head){
+            if(head == null || head.next==null) return head;
+            Node prev = null;
+            Node curr = head;
+            Node next = head.next;
+            while(next!=null){
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+                next = next.next;
+            }
+            curr.next = prev;
+            head = curr;
+            return head;
         }
 }

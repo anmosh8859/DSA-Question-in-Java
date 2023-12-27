@@ -23,15 +23,15 @@ public class Main {
 //        l1.insertLast(2);
 //        l1.insertLast(3);
 //
-//        LinkedList l2 = new LinkedList();
-//        l2.insertLast(9);
-//        l2.insertLast(1);
-//        l2.insertLast(5);
-//        l2.insertLast(4);
-//        l2.insertLast(1);
+        LinkedList l2 = new LinkedList();
+        l2.insertLast(9);
+        l2.insertLast(1);
+        l2.insertLast(5);
+        l2.insertLast(4);
+        l2.insertLast(1);
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
-//        l2.display();
+        l2.display();
 //        l2.mergeSort();
 //        System.out.println(l2.getSize());
 //        l2.display();
@@ -40,6 +40,9 @@ public class Main {
 //        l2.recReverseLL();
 //        l2.display();
 //        ans.display();
+
+        l2.reverseItter();
+        l2.display();
 //        HappyNumber hn = new HappyNumber();
 //        hn.happyNumber(10);
 
@@ -47,9 +50,9 @@ public class Main {
 //        gen.add(5);
 //        gen.add(7);
 //        System.out.println(gen);
-        LambdaExpressionTest let = new LambdaExpressionTest();
-        let.sumOfOddNumber_Usual();
-        let.sumOfOddNumber_FunctionalProgramming();
+//        LambdaExpressionTest let = new LambdaExpressionTest();
+//        let.sumOfOddNumber_Usual();
+//        let.sumOfOddNumber_FunctionalProgramming();
 
     }
 }
