@@ -43,8 +43,9 @@ public class Main {
 //        HappyNumber hn = new HappyNumber();
 //        hn.happyNumber(10);
 
-//        GenericClass<Integer> gen = new GenericClass<>();
-//        gen.add(5);
-//        System.out.println(gen);
+        GenericClass<Integer> gen = new GenericClass<>();
+        gen.add(5);
+        gen.add(7);
+        System.out.println(gen);
     }
 }
