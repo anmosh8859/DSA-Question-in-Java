@@ -186,74 +186,116 @@ public class LinkedList {
 //
 //        recReverseLL(head.next, tail);
 //    }
-        private Node reverseRec(Node head) {
-            if(head == null) {
-                return head;
-            }
-
-            // last node or only one node
-            if(head.next == null) {
-                return head;
-            }
-
-            Node newHeadNode = reverseRec(head.next);
-
-            // change references for middle chain
-            head.next.next = head;
-            head.next = null;
-            display(newHeadNode);
-
-            // send back new head node in every recursion
-            return newHeadNode;
-        }
-
-        public void reverseItter(){
-            head = reverseItter(head);
-        }
-
-        private Node reverseItter(Node head){
-            if(head == null || head.next==null) return head;
-            Node prev = null;
-            Node curr = head;
-            Node next = head.next;
-            while(next!=null){
-                curr.next = prev;
-                prev = curr;
-                curr = next;
-                next = next.next;
-            }
-            curr.next = prev;
-            head = curr;
+    private Node reverseRec(Node head) {
+        if(head == null) {
             return head;
         }
 
-        public void reverseBetween(int left, int right){
-            reverseBetween(head, left, right);
+        // last node or only one node
+        if(head.next == null) {
+            return head;
         }
 
-        private void reverseBetween(Node head, int left, int right){
-            if(head == null || head.next == null || left>=right) return;
-            int size = getSize();
-            if(left<1) left = 1;
-            if(right>size) right = size;
+        Node newHeadNode = reverseRec(head.next);
 
-            Node prevLeft = getNodeAt(left-1);
-            Node nextRight = getNodeAt(right+1);
+        // change references for middle chain
+        head.next.next = head;
+        head.next = null;
+        display(newHeadNode);
 
-            Node prev = prevLeft;
-            Node curr = getNodeAt(left);
-            Node next = curr.next;
-            Node headTemp = curr;
+        // send back new head node in every recursion
+        return newHeadNode;
+    }
 
-            while(next!=nextRight){
-                curr.next = prev;
-                prev = curr;
-                curr = next;
-                next = next.next;
-            }
+    public void reverseItter(){
+        head = reverseItter(head);
+    }
+
+    private Node reverseItter(Node head){
+        if(head == null || head.next==null) return head;
+        Node prev = null;
+        Node curr = head;
+        Node next = head.next;
+        while(next!=null){
             curr.next = prev;
-            if(prevLeft!=null) prevLeft.next = curr;
-            else this.head = curr;
-            headTemp.next = nextRight;
+            prev = curr;
+            curr = next;
+            next = next.next;
         }
+        curr.next = prev;
+        head = curr;
+        return head;
+    }
+
+    public void reverseBetween(int left, int right){
+        reverseBetween(head, left, right);
+    }
+
+    private void reverseBetween(Node head, int left, int right){
+        if(head == null || head.next == null || left>=right) return;
+        int size = getSize();
+        if(left<1) left = 1;
+        if(right>size) right = size;
+
+        Node prevLeft = getNodeAt(left-1);
+        Node nextRight = getNodeAt(right+1);
+
+        Node prev = prevLeft;
+        Node curr = getNodeAt(left);
+        Node next = curr.next;
+        Node headTemp = curr;
+
+        while(next!=nextRight){
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            next = next.next;
+        }
+        curr.next = prev;
+        if(prevLeft!=null) prevLeft.next = curr;
+        else this.head = curr;
+        headTemp.next = nextRight;
+    }
+
+    public LinkedList addTwoDigits(LinkedList l){
+        return new LinkedList(addTwoDigits(this.head,l.head));
+    }
+
+    private Node addTwoDigits(Node l1, Node l2) {
+        int carry = 0;
+        Node lSave;
+        Node head;
+        int t = l1.data + l2.data + carry;
+        carry = t/10;
+        head = lSave = new Node(t%10);
+        l1 = l1.next;
+        l2 = l2.next;
+        while(l1!=null&&l2!=null){
+            t = l1.data + l2.data + carry;
+            carry = t/10;
+            lSave.next = new Node(t%10);
+            lSave = lSave.next;
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        while(l1!=null){
+            t = l1.data + carry;
+            carry = t/10;
+            lSave.next = new Node(t%10);
+            lSave = lSave.next;
+            l1 = l1.next;
+        }
+
+        while(l2!=null){
+            t = l2.data + carry;
+            carry = t/10;
+            lSave.next = new Node(t%10);
+            lSave = lSave.next;
+            l2 = l2.next;
+        }
+        if(carry!=0){
+            lSave.next = new Node(carry);
+        }
+        return head;
+    }
 }

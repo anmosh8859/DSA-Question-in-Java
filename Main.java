@@ -18,10 +18,12 @@ public class Main {
 //        QuickSort.quickSort(arr);
 //        System.out.println(Arrays.toString(arr));
 
-//        LinkedList l1 = new LinkedList();
-//        l1.insertLast(1);
-//        l1.insertLast(2);
-//        l1.insertLast(3);
+        LinkedList l1 = new LinkedList();
+        l1.insertLast(1);
+        l1.insertLast(2);
+        l1.insertLast(3);
+        l1.insertLast(4);
+        l1.insertLast(9);
 //
         LinkedList l2 = new LinkedList();
         l2.insertLast(9);
@@ -42,8 +44,9 @@ public class Main {
 //        ans.display();
 
 //        l2.reverseItter();
-        l2.reverseBetween(0,5);
-        l2.display();
+//        l2.reverseBetween(0,5);
+        LinkedList l3 = l1.addTwoDigits(l2);
+        l3.display();
 //        HappyNumber hn = new HappyNumber();
 //        hn.happyNumber(10);
 
