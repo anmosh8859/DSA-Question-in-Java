@@ -87,7 +87,10 @@ public class LinkedList {
         else ansTemp.next = temp1 != null ? temp1 : temp2;
         return ans.head;
     }
-    public Node getMidNode(Node head){
+    private Node getMidNode(){
+        return getMidNode(head);
+    }
+    private Node getMidNode(Node head){
         Node slow;
         slow = null;
         Node fast = head;
@@ -297,5 +300,17 @@ public class LinkedList {
             lSave.next = new Node(carry);
         }
         return head;
+    }
+    public boolean isPalindrome(){
+        if(head==null || head.next==null) return true;
+        Node mid = getMidNode();
+        Node headTemp = head;
+        Node temp = reverseItter(mid);
+        while(headTemp!=null && temp!=null) {
+            if(headTemp.data!=temp.data) return false;
+            headTemp = headTemp.next;
+            temp = temp.next;
+        }
+        return true;
     }
 }
