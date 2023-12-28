@@ -57,6 +57,9 @@ public class Main {
 //        LambdaExpressionTest let = new LambdaExpressionTest();
 //        let.sumOfOddNumber_Usual();
 //        let.sumOfOddNumber_FunctionalProgramming();
-
+        int [] nums1 = {1,2};
+        int [] nums2 = {3,4};
+        FindMedian fm = new FindMedian();
+        System.out.println(fm.findMedianSortedArrays(nums1,nums2));
     }
 }
