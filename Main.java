@@ -63,7 +63,9 @@ public class Main {
 //        int [] nums2 = {3,4};
 //        FindMedian fm = new FindMedian();
 //        System.out.println(fm.findMedianSortedArrays(nums1,nums2));
-        String s = "pwwkew";
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
+//        String s = "pwwkew";
+//        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
+        int [] plants = {2,3,5,9,64};
+        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
     }
 }
