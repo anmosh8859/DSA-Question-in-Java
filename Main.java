@@ -11,7 +11,7 @@ public class Main {
 //        LargeIntegerSum lis = new LargeIntegerSum();
 //        lis.lis(a,b);
 
-        int [] arr  = {3,5,7,1,4,2,6};
+//        int [] arr  = {3,5,7,1,4,2,6};
 //        RotateArray.intermediateArray(arr,3);
 //        RotateArray.bubbleRotate(arr,3);
 //        RotateArray.reverseRotate(arr,3);
@@ -24,24 +24,24 @@ public class Main {
 //        l1.insertLast(3);
 //        l1.insertLast(4);
 //        l1.insertLast(9);
-//
-        LinkedList l2 = new LinkedList();
-        l2.insertLast(9);
-        l2.insertLast(1);
-        l2.insertLast(5);
-        l2.insertLast(1);
-        l2.insertLast(9);
+////
+//        LinkedList l2 = new LinkedList();
+//        l2.insertLast(9);
+//        l2.insertLast(1);
+//        l2.insertLast(5);
+//        l2.insertLast(1);
+//        l2.insertLast(9);
 
 //        l2 = l2.mergeTwoSortedLinkedList(l1,l2);
-        l2.display();
+//        l2.display();
 //        l2.mergeSort();
 //        System.out.println(l2.getSize());
 //        l2.display();
 //        l2.swapNode(4,5);
 //        l2.bubbleSort();
 //        l2.recReverseLL();
-        System.out.println(l2.isPalindrome());
-        l2.display();
+//        System.out.println(l2.isPalindrome());
+//        l2.display();
 //        ans.display();
 
 //        l2.reverseItter();
@@ -63,6 +63,7 @@ public class Main {
 //        int [] nums2 = {3,4};
 //        FindMedian fm = new FindMedian();
 //        System.out.println(fm.findMedianSortedArrays(nums1,nums2));
-
+        String s = "pwwkew";
+        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
     }
 }
