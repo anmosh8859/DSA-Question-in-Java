@@ -11,7 +11,7 @@ public class Main {
 //        LargeIntegerSum lis = new LargeIntegerSum();
 //        lis.lis(a,b);
 
-//        int [] arr  = {3,5,7,1,4,2,6};
+        int [] arr  = {0,1,4,6,7,10};
 //        RotateArray.intermediateArray(arr,3);
 //        RotateArray.bubbleRotate(arr,3);
 //        RotateArray.reverseRotate(arr,3);
@@ -65,7 +65,9 @@ public class Main {
 //        System.out.println(fm.findMedianSortedArrays(nums1,nums2));
 //        String s = "pwwkew";
 //        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
-        int [] plants = {2,3,5,9,64};
-        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
+//        int [] plants = {2,3,5,9,64};
+//        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
+        System.out.println(new LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
+
     }
 }
