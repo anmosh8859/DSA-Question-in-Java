@@ -1,7 +1,11 @@
+import binarysearchtree.BinarySearchTree;
+import collection.Collection;
 import collection.GenericClass;
 import linkedlist.LinkedList;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -70,5 +74,20 @@ public class Main {
 //        System.out.println(new LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
 //        System.out.println(new LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
         System.out.println(new LeetCode163SumClosest().threeSumClosest(arr,4));
+//        Stack<Integer> stack = new Stack<>();
+//        stack.push(5);
+//        stack.push(4);
+//        Collections.sort(stack);
+//        System.out.println(stack);
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(47);
+        bst.insert(21);
+        bst.insert(76);
+        bst.insert(18);
+        bst.insert(52);
+        bst.insert(82);
+        System.out.println(bst.contains(18));
+        System.out.println(bst.contains(22));
+        System.out.println(bst);
     }
 }
