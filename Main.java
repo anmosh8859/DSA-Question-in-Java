@@ -11,7 +11,7 @@ public class Main {
 //        LargeIntegerSum lis = new LargeIntegerSum();
 //        lis.lis(a,b);
 
-        int [] arr  = {4,4,2,4,3};
+        int [] arr  = {4,-4,2,4,3};
 //        RotateArray.intermediateArray(arr,3);
 //        RotateArray.bubbleRotate(arr,3);
 //        RotateArray.reverseRotate(arr,3);
@@ -68,6 +68,7 @@ public class Main {
 //        int [] plants = {2,3,5,9,64};
 //        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
 //        System.out.println(new LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
-        System.out.println(new LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
+//        System.out.println(new LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
+        System.out.println(new LeetCode163SumClosest().threeSumClosest(arr,4));
     }
 }
