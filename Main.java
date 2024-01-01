@@ -93,10 +93,23 @@ public class Main {
 //        String s ="";
 //        System.out.println("Total no. of leaf nodes: " + bst.noOfLeaf());
         Graph g = new Graph();
+
         g.addVertex("A");
         g.addVertex("B");
+        g.addVertex("C");
+        g.addVertex("D");
+
         g.addEdge("A","B");
-        g.removeEdge("A","B");
+        g.addEdge("A","C");
+        g.addEdge("A","D");
+        g.addEdge("B","D");
+        g.addEdge("C","D");
+
+        System.out.println(g);
+
+        g.removeVertex("D");
+
+//        g.removeEdge("A","B");
         System.out.println(g);
     }
 }
