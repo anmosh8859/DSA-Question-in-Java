@@ -45,6 +45,15 @@ public class BinarySearchTree {
         return false;
     }
 
+    public int noOfLeaf(){
+        return noOfLeaf(root,0);
+    }
+    private int noOfLeaf(Node root, int count){
+        if(root.left == null) return ++count;
+        else if(root.right == null) return ++count;
+        else return noOfLeaf(root.left,count) + noOfLeaf(root.right, count);
+    }
+
     @Override
     public String toString() {
 //        int leftIndent = 0;

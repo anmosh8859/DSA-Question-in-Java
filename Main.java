@@ -89,5 +89,7 @@ public class Main {
         System.out.println(bst.contains(18));
         System.out.println(bst.contains(22));
         System.out.println(bst);
+        String s ="";
+        System.out.println("Total no. of leaf nodes: " + bst.noOfLeaf());
     }
 }
