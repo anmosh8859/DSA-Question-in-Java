@@ -1,6 +1,7 @@
 import binarysearchtree.BinarySearchTree;
 import collection.Collection;
 import collection.GenericClass;
+import graph.Graph;
 import linkedlist.LinkedList;
 
 import java.io.IOException;
@@ -79,17 +80,23 @@ public class Main {
 //        stack.push(4);
 //        Collections.sort(stack);
 //        System.out.println(stack);
-        BinarySearchTree bst = new BinarySearchTree();
-        bst.insert(47);
-        bst.insert(21);
-        bst.insert(76);
-        bst.insert(18);
-        bst.insert(52);
-        bst.insert(82);
-        System.out.println(bst.contains(18));
-        System.out.println(bst.contains(22));
-        System.out.println(bst);
-        String s ="";
-        System.out.println("Total no. of leaf nodes: " + bst.noOfLeaf());
+//        BinarySearchTree bst = new BinarySearchTree();
+//        bst.insert(47);
+//        bst.insert(21);
+//        bst.insert(76);
+//        bst.insert(18);
+//        bst.insert(52);
+//        bst.insert(82);
+//        System.out.println(bst.contains(18));
+//        System.out.println(bst.contains(22));
+//        System.out.println(bst);
+//        String s ="";
+//        System.out.println("Total no. of leaf nodes: " + bst.noOfLeaf());
+        Graph g = new Graph();
+        g.addVertex("A");
+        g.addVertex("B");
+        g.addEdge("A","B");
+        g.removeEdge("A","B");
+        System.out.println(g);
     }
 }
