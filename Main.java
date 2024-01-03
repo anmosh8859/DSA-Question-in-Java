@@ -2,7 +2,9 @@ import binarysearchtree.BinarySearchTree;
 import collection.Collection;
 import collection.GenericClass;
 import graph.Graph;
+import heap.HeapDriver;
 import linkedlist.LinkedList;
+import sorting.SortingDriver;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -74,7 +76,7 @@ public class Main {
 //        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
 //        System.out.println(new LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
 //        System.out.println(new LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
-        System.out.println(new LeetCode163SumClosest().threeSumClosest(arr,4));
+//        System.out.println(new LeetCode163SumClosest().threeSumClosest(arr,4));
 //        Stack<Integer> stack = new Stack<>();
 //        stack.push(5);
 //        stack.push(4);
@@ -113,6 +115,10 @@ public class Main {
 //        System.out.println(g);
 
 
-        System.out.println(new LeetCode5LongestPalindromeSubstring().longestPalindrome("acbbba"));
+//        System.out.println(new LeetCode5LongestPalindromeSubstring().longestPalindrome("acbbba"));
+
+//        HeapDriver.heapDriver();
+//        SortingDriver.sortingDriver();
+
     }
 }

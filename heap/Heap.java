@@ -30,4 +30,36 @@ public class Heap {
         heap.set(index1,heap.get(index2));
         heap.set(index2,temp);
     }
+
+    public void insert(int value){
+        heap.add(value);
+        int childInd = heap.indexOf(value);
+        int child = value;
+        int parentInd;
+        int parent;
+        do{
+            parentInd = parent(childInd);
+            parent = heap.get(parentInd);
+            if (parent<child) {
+                swap(childInd,parentInd);
+            } else break;
+            childInd = parentInd;
+
+        }while (parentInd>0);
+    }
+
+    public Integer remove(){
+        if(heap.size()==0) return null;
+        if(heap.size()==1) return heap.remove(0);
+        int maxValue = heap.get(0);
+
+        // just for now
+        return -1;
+    }
+    @Override
+    public String toString() {
+        return "Heap{" +
+                "heap=" + heap +
+                '}';
+    }
 }
