@@ -1,3 +1,5 @@
+package leetcode;
+
 public class LeetCode5LongestPalindromeSubstring {
     public boolean checkPalindromeInString(int i, int j, String s){
         while(i<j){

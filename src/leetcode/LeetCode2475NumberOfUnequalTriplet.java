@@ -1,3 +1,5 @@
+package leetcode;
+
 public class LeetCode2475NumberOfUnequalTriplet {
     public int unequalTriplets(int[] nums) {
         int total = 0;

@@ -3,6 +3,7 @@ import collection.Collection;
 import collection.GenericClass;
 import graph.Graph;
 import heap.HeapDriver;
+import leetcode.LeetCodeDriver;
 import linkedlist.LinkedList;
 
 import java.io.IOException;
@@ -72,10 +73,10 @@ public class Main {
 //        String s = "pwwkew";
 //        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
 //        int [] plants = {2,3,5,9,64};
-//        System.out.println(new LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
-//        System.out.println(new LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
-//        System.out.println(new LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
-//        System.out.println(new LeetCode163SumClosest().threeSumClosest(arr,4));
+//        System.out.println(new leetcode.LeetCode2105WateringThePlants().minimumRefill(plants,4,5));
+//        System.out.println(new leetcode.LeetCode2367ArithmeticTriplet().arithmeticTriplets(arr,3));
+//        System.out.println(new leetcode.LeetCode2475NumberOfUnequalTriplet().unequalTriplets(arr));
+//        System.out.println(new leetcode.LeetCode163SumClosest().threeSumClosest(arr,4));
 //        Stack<Integer> stack = new Stack<>();
 //        stack.push(5);
 //        stack.push(4);
@@ -110,13 +111,14 @@ public class Main {
 //
 //        g.removeVertex("D");
 //
-////        g.removeEdge("A","B");
+//        g.removeEdge("A","B");
 //        System.out.println(g);
 
 
-//        System.out.println(new LeetCode5LongestPalindromeSubstring().longestPalindrome("acbbba"));
+//        System.out.println(new leetcode.LeetCode5LongestPalindromeSubstring().longestPalindrome("acbbba"));
 
 //        HeapDriver.heapDriver();
+        LeetCodeDriver.leetCodeDriver();
 
     }
 }

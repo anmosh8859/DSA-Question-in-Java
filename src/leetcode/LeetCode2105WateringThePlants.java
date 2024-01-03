@@ -1,3 +1,5 @@
+package leetcode;
+
 public class LeetCode2105WateringThePlants {
     public int minimumRefill(int[] plants, int capacityA, int capacityB) {
         int i = 0;

@@ -1,3 +1,5 @@
+package leetcode;
+
 public class LeetCode2367ArithmeticTriplet {
     public int arithmeticTriplets(int[] nums, int diff) {
         int total = 0;
