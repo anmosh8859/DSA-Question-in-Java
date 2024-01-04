@@ -3,9 +3,9 @@ package heap;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Heap {
+public class MaxHeap {
     private List<Integer> heap;
-    public Heap(){
+    public MaxHeap(){
         this.heap = new ArrayList<>();
     }
 

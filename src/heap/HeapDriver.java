@@ -3,7 +3,7 @@ package heap;
 public class HeapDriver {
     public static void heapDriver(){
 
-        Heap heap = new Heap();
+        MaxHeap maxHeap = new MaxHeap();
 //        heap.insert(99);
 //        heap.insert(72);
 //        heap.insert(61);
@@ -11,18 +11,18 @@ public class HeapDriver {
 //        heap.insert(100);
 //        heap.insert(75);
 
-        heap.insert(95);
-        heap.insert(75);
-        heap.insert(80);
-        heap.insert(55);
-        heap.insert(60);
-        heap.insert(50);
-        heap.insert(65);
+        maxHeap.insert(95);
+        maxHeap.insert(75);
+        maxHeap.insert(80);
+        maxHeap.insert(55);
+        maxHeap.insert(60);
+        maxHeap.insert(50);
+        maxHeap.insert(65);
 
-        System.out.println(heap);
+        System.out.println(maxHeap);
 
-        heap.remove();
+        maxHeap.remove();
 
-        System.out.println(heap);
+        System.out.println(maxHeap);
     }
 }
