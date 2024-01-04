@@ -45,16 +45,31 @@ public class Heap {
             } else break;
             childInd = parentInd;
 
-        }while (parentInd>0);
+        }while (parentInd > 0);
+    }
+
+    public void sinkDown(int index){
+        int largest = index;
+        while(true){
+            int left = rightChild(index);
+            int right = rightChild(index);
+
+            if(left<heap.size() && heap.get(left) > heap.get(largest)) largest = left;
+            if(right<heap.size() && heap.get(right) > heap.get(largest)) largest = right;
+            if(largest != index){
+                swap(largest, index);
+                index = largest;
+            }else break;
+        }
     }
 
     public Integer remove(){
         if(heap.size()==0) return null;
         if(heap.size()==1) return heap.remove(0);
         int maxValue = heap.get(0);
-
-        // just for now
-        return -1;
+        heap.set(0, heap.remove(heap.size()-1));
+        sinkDown(0);
+        return maxValue;
     }
     @Override
     public String toString() {
