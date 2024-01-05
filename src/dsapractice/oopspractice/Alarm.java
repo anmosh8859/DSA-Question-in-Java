@@ -2,12 +2,12 @@ package dsapractice.oopspractice;
 
 import java.time.LocalDateTime;
 
-public class Alarm {
+public sealed class Alarm permits PrioritezedAlarm,HighVisibilityAlarm,DummyClass{
     private boolean active;
     private final String message;
     private LocalDateTime snoozeUntil;
     Alarm(){
-        this("TEMPERATURE IS TOO HIGH");
+        this("Temperature is too high");
     }
     Alarm(String message){
         this.message = message;
@@ -29,6 +29,10 @@ public class Alarm {
     public void turnOn(){
         active = true;
         stopSnoozing();
+    }
+
+    public boolean isActive() {
+        return active;
     }
 
     public void turnOff(){
