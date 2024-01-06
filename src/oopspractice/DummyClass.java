@@ -1,4 +1,4 @@
-package dsapractice.oopspractice;
+package oopspractice;
 
 public final class DummyClass extends Alarm {
 }

@@ -24,10 +24,20 @@ public class Driver {
         bst.insert(27);
 
         System.out.println(bst);
+
         BinarySearchTree.DFS dfs = bst.new DFS();
         dfs.preOrder();
         dfs.inOrder();
         dfs.postOrder();
         bst.bfs();
+
+        bst.delete(47);
+
+        dfs.preOrder();
+        dfs.inOrder();
+        dfs.postOrder();
+        bst.bfs();
+
+        System.out.println(bst);
     }
 }

@@ -1,4 +1,4 @@
-package dsapractice.oopspractice;
+package oopspractice;
 
 public non-sealed class HighVisibilityAlarm extends Alarm{
     public HighVisibilityAlarm(String message) {

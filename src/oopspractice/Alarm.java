@@ -1,4 +1,4 @@
-package dsapractice.oopspractice;
+package oopspractice;
 
 import java.time.LocalDateTime;
 

@@ -30,12 +30,29 @@ public class BinarySearchTree {
         else temp.right = new Node(value);
         return true;
     }
-
     public void delete(int value){
+        System.out.println(delete(root, value).value);
+    }
+    private Node delete(Node root, int value){
+        if(root == null) return root;
+        if(value<root.value) root.left = delete(root.left,value);
+        else if (value > root.value) root.right = delete(root.right, value);
+        else {
+            if(root.left == null) return root.right;
+            else if (root.right==null) return root.left;
+            root.value = minValue(root.right);
+            root.right = delete(root.right, root.value);
+        }
+        return root;
+    }
 
+    private int minValue(Node root) {
+        if(root.left == null) return root.value;
+        return minValue(root.left);
     }
 
     public void bfs(){
+        System.out.print("BFS: ");
         Queue<Node> q = new LinkedList<>();
         Node temp = root;
         q.add(temp);

@@ -1,4 +1,4 @@
-package dsapractice.oopspractice;
+package oopspractice;
 
 public final class PrioritezedAlarm extends Alarm {
     final private int priority;

@@ -1,4 +1,4 @@
-package dsapractice.oopspractice;
+package oopspractice;
 
 public class OOPsDriver {
     public static void driver(){
@@ -12,7 +12,7 @@ public class OOPsDriver {
 //        }
 //        alarm.sendReport();
 
-        HighVisibilityAlarm hva  =new HighVisibilityAlarm("Temperature is too high...");
+        /*HighVisibilityAlarm hva*/ Alarm hva  = new HighVisibilityAlarm("Temperature is too high...");
         hva.turnOn();
         hva.sendReport();
 
