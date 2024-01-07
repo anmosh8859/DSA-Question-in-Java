@@ -1,6 +1,4 @@
-import collection.Collection;
-import collection.CollectionDriver;
-import dsapractice.Driver;
+import dsapractice.DSADriver;
 
 import java.io.IOException;
 
@@ -20,6 +18,7 @@ public class Main {
 //        RotateArray.intermediateArray(arr,3);
 //        RotateArray.bubbleRotate(arr,3);
 //        RotateArray.reverseRotate(arr,3);
+//        QuickSort.quickSort(arr);
 //        QuickSort.quickSort(arr);
 //        System.out.println(Arrays.toString(arr));
 
@@ -118,9 +117,9 @@ public class Main {
 //        HeapDriver.heapDriver();
 //        LeetCodeDriver.leetCodeDriver();
 
-//        Driver.driver();
+        DSADriver.driver();
 
-        CollectionDriver.driver();
+//        CollectionDriver.driver();
 //        OOPsDriver.driver();
     }
 }

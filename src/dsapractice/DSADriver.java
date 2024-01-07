@@ -1,6 +1,6 @@
 package dsapractice;
 
-public class Driver {
+public class DSADriver {
     public static void driver(){
 //        LinkedList ll = new LinkedList();
 //        System.out.println(ll);
@@ -15,15 +15,25 @@ public class Driver {
 //        System.out.println(ll);
 
         BinarySearchTree bst = new BinarySearchTree();
-        bst.insert(47);
-        bst.insert(21);
-        bst.insert(76);
-        bst.insert(18);
-        bst.insert(52);
-        bst.insert(82);
-        bst.insert(27);
+//        bst.insertItr(47);
+//        bst.insertItr(21);
+//        bst.insertItr(76);
+//        bst.insertItr(18);
+//        bst.insertItr(52);
+//        bst.insertItr(82);
+//        bst.insertItr(27);
+
+        bst.insertRec(47);
+        bst.insertRec(21);
+        bst.insertRec(76);
+        bst.insertRec(18);
+        bst.insertRec(52);
+        bst.insertRec(82);
+        bst.insertRec(27);
 
         System.out.println(bst);
+
+        System.out.println("No. of Leaf Nodes: " + bst.noOfLeafNodes());
 
         BinarySearchTree.DFS dfs = bst.new DFS();
         dfs.preOrder();
@@ -39,5 +49,7 @@ public class Driver {
         bst.bfs();
 
         System.out.println(bst);
+
+        System.out.println("No. of Leaf Nodes: " + bst.noOfLeafNodes());
     }
 }

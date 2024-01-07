@@ -55,7 +55,7 @@ public class CollectionDriver {
                                         .map(key->key*key)
                                         .dropWhile(key->key%2==0)
                                         .toList();
-        System.out.println(alphabet);
+        System.out.println();
         System.out.println(smallOddSquares);
         for (int key:squareOfKey.keySet()){
             System.out.println(key);

@@ -14,7 +14,7 @@ public class BinarySearchTree {
         }
     }
     private Node root;
-    public boolean insert(int value){
+    public boolean insertItr(int value){
         if(root == null){
             root = new Node(value);
             return true;
@@ -30,25 +30,58 @@ public class BinarySearchTree {
         else temp.right = new Node(value);
         return true;
     }
+
+    public void insertRec(int value){
+        root = insertRec(root,value);
+    }
+
+    private Node insertRec(Node root, int value){
+        if(root == null) return new Node(value);
+        else if (value<root.value) root.left = insertRec(root.left,value);
+        else root.right = insertRec(root.right,value);
+        return root;
+    }
+
+    public boolean contains(int value){
+        return contains(root,value);
+    }
+
+    private boolean contains(Node root, int value){
+        if(root == null) return false;
+        if(root.value==value) return true;
+        if(value<root.value) return contains(root.left,value);
+        else return contains(root.right,value);
+    }
+
     public void delete(int value){
         System.out.println(delete(root, value).value);
     }
     private Node delete(Node root, int value){
         if(root == null) return root;
-        if(value<root.value) root.left = delete(root.left,value);
-        else if (value > root.value) root.right = delete(root.right, value);
-        else {
+        else if(value < root.value) root.left =  delete(root.left,value);
+        else if (value > root.value) root.right = delete(root.right,value);
+        else{
             if(root.left == null) return root.right;
             else if (root.right==null) return root.left;
-            root.value = minValue(root.right);
+            root.value = findMin(root.right, value);
             root.right = delete(root.right, root.value);
         }
         return root;
     }
 
-    private int minValue(Node root) {
-        if(root.left == null) return root.value;
-        return minValue(root.left);
+    private int findMin(Node root, int value) {
+        if(root.left==null) return root.value;
+        return findMin(root.left,value);
+    }
+
+    public int noOfLeafNodes(){
+        return noOfLeafNodes(root,0);
+    }
+
+    private int noOfLeafNodes(Node root, int i) {
+        if(root == null)return i;
+        if(root.left == null && root.right == null) return 1;
+        return noOfLeafNodes(root.left,i) + noOfLeafNodes(root.right,i);
     }
 
     public void bfs(){

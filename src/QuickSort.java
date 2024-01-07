@@ -1,28 +1,34 @@
+import java.util.Arrays;
+
 public class QuickSort {
-    private static void swap(int [] arr, int ind1, int ind2){
-        int temp = arr[ind1];
-        arr[ind1] = arr[ind2];
-        arr[ind2] = temp;
+
+    private static void swap(int [] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
-    private static int pivot(int [] arr, int pivotIndex, int endIndex){
-        int swapIndex = pivotIndex;
-        for (int i = pivotIndex + 1; i <=endIndex ; i++) {
-            if(arr[i] < arr[pivotIndex]){
-                swapIndex++;
-                swap(arr,swapIndex,i);
+    private static int partition(int [] arr, int start, int end){
+        int pivot = end-1;
+        int i = start-1;
+        for (int j = start ; j < end-1; j++) {
+            if(arr[j]<arr[pivot]){
+                System.out.println("start:" + start + " end: " + end);
+                swap(arr,++i,j);
             }
         }
-        swap(arr, pivotIndex, swapIndex);
-        return swapIndex;
+        swap(arr,++i,pivot);
+        return i;
     }
-    private static void quickSortHelper(int [] arr, int left, int right){
-        if(left<right){
-            int pivotIndex = pivot(arr, left,right);
-            quickSortHelper(arr,left,pivotIndex-1);
-            quickSortHelper(arr,pivotIndex+1,right);
+    private static void quickSort(int [] arr, int start , int end){
+        if(start<end-1){
+            int partition = partition(arr, start, end);
+            System.out.println("start:" + start + " partition: " + partition + " end: " + end);
+            quickSort(arr, start, partition);
+            quickSort(arr,partition+1,end);
         }
     }
-    protected static void quickSort(int [] arr){
-        quickSortHelper(arr,0, arr.length-1);
+    public static void quickSort(int [] arr){
+        quickSort(arr,0, arr.length);
     }
 }
+//int [] arr  = {4,-4,2,4,3};
