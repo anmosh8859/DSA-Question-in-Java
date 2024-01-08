@@ -12,6 +12,9 @@ public class CollectionDriver {
         for (int i = 1; i <= 10; i++) {
             squareOfKey.put(i,i*i);
         }
+
+        squareOfKey.keySet().stream().map(key->squareOfKey.put(squareOfKey.get(key),squareOfKey.get(key)*squareOfKey.get(key)*squareOfKey.get(key))).forEach(System.out::println);
+
         System.out.println(squareOfKey);
 
         var keySet = squareOfKey.keySet();
