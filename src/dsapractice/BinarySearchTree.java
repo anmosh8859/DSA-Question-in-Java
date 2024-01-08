@@ -37,8 +37,8 @@ public class BinarySearchTree {
 
     private Node insertRec(Node root, int value){
         if(root == null) return new Node(value);
-        else if (value<root.value) root.left = insertRec(root.left,value);
-        else root.right = insertRec(root.right,value);
+        else if (value < root.value) root.left = insertRec(root.left,value);
+        else if(value > root.value)root.right = insertRec(root.right,value);
         return root;
     }
 
@@ -63,15 +63,15 @@ public class BinarySearchTree {
         else{
             if(root.left == null) return root.right;
             else if (root.right==null) return root.left;
-            root.value = findMin(root.right, value);
+            root.value = findMin(root.right);
             root.right = delete(root.right, root.value);
         }
         return root;
     }
 
-    private int findMin(Node root, int value) {
+    private int findMin(Node root) {
         if(root.left==null) return root.value;
-        return findMin(root.left,value);
+        return findMin(root.left);
     }
 
     public int noOfLeafNodes(){
