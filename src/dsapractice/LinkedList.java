@@ -65,6 +65,30 @@ public class LinkedList {
         return -1;
     }
 
+    public void print10thFrom(){
+        int size = 0;
+        Node temp = head;
+        while(temp!=null){
+            temp = temp.next;
+            size++;
+        }
+        if(size<10){
+            System.out.println("Elements are less than 10");
+        } else {
+            size -= 10;
+            temp = head;
+            while(size>0){
+                temp = temp.next;
+                size--;
+            }
+            System.out.println("10th element from the last: "+temp.data);
+        }
+    }
+
+
+
+
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder("Linked List: ");

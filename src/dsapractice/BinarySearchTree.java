@@ -1,7 +1,9 @@
 package dsapractice;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinarySearchTree {
     class Node{
@@ -155,6 +157,46 @@ public class BinarySearchTree {
             printTree(current.left, indent, true);
             printTree(current.right, indent, false);
         }
+    }
+
+    public void lowestCommonAncestor(int a, int b){
+        int lca = lowestCommonAncestor(a,b,root);
+        if(lca==Integer.MIN_VALUE) System.out.println("Not Found");
+    }
+
+    private int lowestCommonAncestor(int a , int b, Node root){
+//        Stack<Node> stack = new Stack<>();
+//        stack.push(root);
+//        while(!stack.empty()){
+//            Node temp = stack.pop();
+//            Node left = temp.left;
+//            Node right = temp.right;
+//            int check1 = Integer.MIN_VALUE;
+//            int check2 = Integer.MIN_VALUE;
+//            if(left!=null){
+//                if(left.value!=a || left.value!=b) stack.push(left);
+//                else check1 = left.value;
+//            }
+//            if(right!=null){
+//                if(right.value!=a || right.value!=b) stack.push(right);
+//                else check2 = right.value;
+//            }
+//
+//        }
+
+        if(root!=null){
+            int left = lowestCommonAncestor(a,b,root.left);
+            int right = lowestCommonAncestor(a,b,root.right);
+            if(left==a && right==b || left==b && right ==a){
+                System.out.println("The lowest common ancestor: " + root.value);
+            } else if (root.value==a || root.value==b) {
+                return root.value;
+            } else if (left==a || left==b) {
+                return left;
+            } else if(right==a || right ==b) return right;
+            else return root.value;
+        }
+        return Integer.MIN_VALUE;
     }
 
     @Override
