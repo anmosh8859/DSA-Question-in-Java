@@ -1,5 +1,7 @@
 package collection;
 
+import dsapractice.DataStructureBigO1;
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,20 +67,32 @@ public class CollectionDriver {
 //        }
 
 
-        MyStackWithConstantPushPopGetMax mstack = new MyStackWithConstantPushPopGetMax();
-        mstack.push(3);
-        mstack.push(5);
-        mstack.getMax();
-        mstack.push(7);
-        mstack.push(19);
-        mstack.getMax();
-        mstack.pop();
-        mstack.getMax();
-        mstack.pop();
-        mstack.peek();
-        mstack.pop();
-        mstack.pop();
-        mstack.pop();
+//        MyStackWithConstantPushPopGetMax mstack = new MyStackWithConstantPushPopGetMax();
+//        mstack.push(3);
+//        mstack.push(5);
+//        mstack.getMax();
+//        mstack.push(7);
+//        mstack.push(19);
+//        mstack.getMax();
+//        mstack.pop();
+//        mstack.getMax();
+//        mstack.pop();
+//        mstack.peek();
+//        mstack.pop();
+//        mstack.pop();
+//        mstack.pop();
+
+
+        DataStructureBigO1 ds = new DataStructureBigO1();
+        ds.insert(5);
+        ds.insert(65);
+        ds.insert(0);
+        ds.remove(5);
+        System.out.println(ds.getMin());
+        System.out.println(ds.getMax());
+        ds.remove(0);
+        ds.remove(65);
+
     }
 
     public static void main(String[] args) {
