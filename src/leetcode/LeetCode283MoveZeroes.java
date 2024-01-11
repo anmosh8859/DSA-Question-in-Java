@@ -1,4 +1,5 @@
 package leetcode;
+import java.lang.Object;
 
 // Easy 100% Efficient
 public class LeetCode283MoveZeroes {
