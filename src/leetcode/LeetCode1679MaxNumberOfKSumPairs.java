@@ -5,6 +5,44 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class LeetCode1679MaxNumberOfKSumPairs {
+
+
+    //chori ka solution 100% efficient...
+    public int maxOperate(int[] nums, int k) {
+        int n = nums.length;
+        int count = 0;
+        if (n < 2) {
+            return 0;
+        }
+        int filteredLength = 0;
+        for(int num : nums){
+            if (num < k){
+                nums[filteredLength++] = num;
+            }
+        }
+        Arrays.sort(nums, 0, filteredLength);
+        int leftIdx = 0, rightIdx = filteredLength-1;
+
+        while (leftIdx < rightIdx && leftIdx < n && rightIdx > 0) {
+            int sum = nums[leftIdx] + nums[rightIdx];
+            if (sum == k) {
+                count++;
+                leftIdx++;
+                rightIdx--;
+            }
+            else if ( sum < k){
+                leftIdx++;
+            }
+            else if (sum > k){
+                rightIdx--;
+            }
+        }
+        return count;
+    }
+
+
+
+
     //method 1 bad complexity...
     public int maxOperations(int[] nums, int k) {
         Arrays.sort(nums);
