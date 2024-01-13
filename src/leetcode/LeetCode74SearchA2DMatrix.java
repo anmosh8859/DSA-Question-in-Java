@@ -18,7 +18,6 @@ public class LeetCode74SearchA2DMatrix {
             else if(target < mat[mid][0]) end = mid;
             else start = mid + 1;
         }
-
         start = 0;
         end = col;
         while(start<end){
