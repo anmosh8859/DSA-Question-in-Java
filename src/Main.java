@@ -2,7 +2,11 @@ import collection.CollectionDriver;
 import dsapractice.DSADriver;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     void inc(Integer i){
@@ -124,5 +128,16 @@ public class Main {
 //        CollectionDriver.driver();
 
 //        OOPsDriver.driver();
+
+        int[] nums1 = {1,2,3};
+        int [] nums2 = {2,4,6};
+        HashSet<Integer> set1 = new HashSet<>(Arrays.stream(nums1).boxed().collect(Collectors.toList()));
+        HashSet<Integer> set2 = new HashSet<>(Arrays.stream(nums2).boxed().collect(Collectors.toList()));
+        System.out.println(set1);
+        System.out.println(set2);
+        List<List<Integer>>  li = new ArrayList<>();
+        li.add(set1.stream().filter(num -> !set2.contains(num)).collect(Collectors.toList()));
+        li.add(set2.stream().filter(num -> !set1.contains(num)).collect(Collectors.toList()));
+        System.out.println(li);
     }
 }
