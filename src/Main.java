@@ -1,4 +1,5 @@
 import collection.CollectionDriver;
+import dsapractice.Combinations;
 import dsapractice.DSADriver;
 
 import java.io.IOException;
@@ -13,14 +14,14 @@ public class Main {
         i=5;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) /*throws IOException*/ {
 //        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //        String a = bf.readLine();
 //        String b = bf.readLine();
 //        LargeIntegerSum lis = new LargeIntegerSum();
 //        lis.lis(a,b);
 
-        int [] arr  = {4,-4,2,4,3};
+//        int [] arr  = {4,-4,2,4,3};
 //        RotateArray.intermediateArray(arr,3);
 //        RotateArray.bubbleRotate(arr,3);
 //        RotateArray.reverseRotate(arr,3);
@@ -129,15 +130,16 @@ public class Main {
 
 //        OOPsDriver.driver();
 
-        int[] nums1 = {1,2,3};
-        int [] nums2 = {2,4,6};
-        HashSet<Integer> set1 = new HashSet<>(Arrays.stream(nums1).boxed().collect(Collectors.toList()));
-        HashSet<Integer> set2 = new HashSet<>(Arrays.stream(nums2).boxed().collect(Collectors.toList()));
-        System.out.println(set1);
-        System.out.println(set2);
-        List<List<Integer>>  li = new ArrayList<>();
-        li.add(set1.stream().filter(num -> !set2.contains(num)).collect(Collectors.toList()));
-        li.add(set2.stream().filter(num -> !set1.contains(num)).collect(Collectors.toList()));
-        System.out.println(li);
+//        int[] nums1 = {1,2,3};
+//        int [] nums2 = {2,4,6};
+//        HashSet<Integer> set1 = new HashSet<>(Arrays.stream(nums1).boxed().collect(Collectors.toList()));
+//        HashSet<Integer> set2 = new HashSet<>(Arrays.stream(nums2).boxed().collect(Collectors.toList()));
+//        System.out.println(set1);
+//        System.out.println(set2);
+//        List<List<Integer>>  li = new ArrayList<>();
+//        li.add(set1.stream().filter(num -> !set2.contains(num)).collect(Collectors.toList()));
+//        li.add(set2.stream().filter(num -> !set1.contains(num)).collect(Collectors.toList()));
+//        System.out.println(li);
+        System.out.println(Combinations.combinations(27,8));
     }
 }
